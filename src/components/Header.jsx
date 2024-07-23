@@ -15,7 +15,7 @@ export default function Header() {
         </Link>
         {/*search*/}
         <input type='text' placeholder='Search...' className='bg-blue-50 border border-blue-900 rounded text-sm w-full py-2 px-4 max-w-[300px] lg:max-w-[400px]'/>
-        <button className='text-md font-semibold text-blue-800 border border-white-600 p-3 hover:text-black hover:bg-blue-200 rounded-full'>Log In</button>
+        <button className='text-md font-semibold text-blue-800 border border-white-600 p-3 hover:text-black hover:bg-blue-200 rounded-full transition ease-out'>Log In</button>
         
       </div>
     </div>
