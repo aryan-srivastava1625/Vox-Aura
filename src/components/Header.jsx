@@ -1,8 +1,13 @@
+"use client"
+
+import { useSession } from "next-auth/react"
 import Link from 'next/link';
 import React from 'react';
 import { BsChatLeftHeartFill } from "react-icons/bs";
 
 export default function Header() {
+  const {data: session}= useSession()
+  console.log(session)
   return (
     <div className='shadow-sm border-b sticky top-0 bg-blue-50 z-30 p-3'>
       <div className='flex justify-between items-center max-w-6xl mx-auto'>
