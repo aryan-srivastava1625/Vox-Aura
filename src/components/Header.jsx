@@ -1,13 +1,14 @@
 "use client"
 
-import { useSession } from "next-auth/react"
+import { signIn, useSession } from "next-auth/react"
 import Link from 'next/link';
 import React from 'react';
 import { BsChatLeftHeartFill } from "react-icons/bs";
 
 export default function Header() {
   const {data: session}= useSession()
-  console.log(session)
+  // console.log(session)
+
   return (
     <div className='shadow-sm border-b sticky top-0 bg-blue-50 z-30 p-3'>
       <div className='flex justify-between items-center max-w-6xl mx-auto'>
@@ -20,7 +21,18 @@ export default function Header() {
         </Link>
         {/*search*/}
         <input type='text' placeholder='Search...' className='bg-blue-50 border border-blue-900 rounded text-sm w-full py-2 px-4 max-w-[300px] lg:max-w-[400px]'/>
-        <button className='text-md font-semibold text-blue-800 border border-white-600 p-3 hover:text-black hover:bg-blue-200 rounded-full transition ease-out'>Log In</button>
+
+        {
+          session ?  (
+            // <img src="" alt="" />
+            <div></div>
+          ) : (
+            <button onClick={signIn} className='text-md font-semibold text-blue-800 border border-white-600 p-3 hover:text-black hover:bg-blue-200 rounded-full transition ease-out'>Log In</button>
+
+
+          )
+        }
+
         
       </div>
     </div>
